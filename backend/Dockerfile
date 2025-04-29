@@ -1,7 +1,7 @@
 FROM node:20-alpine
 EXPOSE 8080
 ENV DB_HOST="mysql"
-RUN addgroup -S expense && expense -G expense
+RUN addgroup -S expense && adduser expense -G expense
 #ENV DB_HOST="localhost" #Host Network
 #ENV DB_HOST="mysql" Bridge Network
 RUN mkdir /opt/server
