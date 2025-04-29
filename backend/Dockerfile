@@ -1,11 +1,11 @@
 FROM node:20-alpine
 EXPOSE 8080
 ENV DB_HOST="mysql"
-RUN addgroup -S expense && adduser -S expense -G expense
+RUN addgroup -S expense && adduser -S expense -G expense && \
 #ENV DB_HOST="localhost" #Host Network
 #ENV DB_HOST="mysql" Bridge Network
-RUN mkdir /opt/server
-RUN chown -R expense:expense /opt/server
+    mkdir /opt/server && \
+    chown -R expense:expense /opt/server
 WORKDIR /opt/server
 COPY package.json .
 COPY *.js .
