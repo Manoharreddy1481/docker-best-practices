@@ -1,4 +1,4 @@
-FROM node AS build
+FROM node:20 AS build
 #ENV DB_HOST="localhost" #Host Network
 #ENV DB_HOST="mysql" Bridge Network
 WORKDIR /opt/server
